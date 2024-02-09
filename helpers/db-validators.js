@@ -1,4 +1,5 @@
 const Usuario = require('../models/usuario');
+const Mascota = require('../models/mascota');
 
 const existenteEmail = async (correo = '') => {
     const existeEmail = await Usuario.findOne({correo});
@@ -14,7 +15,14 @@ const existeUsuarioById = async ( id = '') => {
     }
 }
 
+// const existenteMascota = async(nombre = '') => {
+//     const existenteMascota = await Mascota.findOne({nombre});
+//     if (existenteMascota) {
+//         throw new Error(`La mascota ${nombre} ya existe`);
+//     }
+// }
 module.exports = {
     existenteEmail,
     existeUsuarioById
+    // existenteMascota
 }
