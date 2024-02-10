@@ -15,6 +15,13 @@ const existeUsuarioById = async ( id = '') => {
     }
 }
 
+const existeMascotaById = async ( id = '') => {
+    const existeMascota = await Mascota.findOne({id});
+    if(existeMascota){
+        throw new Error(`La mascota con el id ${id} no existe`);
+    }
+}
+
 // const existenteMascota = async(nombre = '') => {
 //     const existenteMascota = await Mascota.findOne({nombre});
 //     if (existenteMascota) {
@@ -23,6 +30,7 @@ const existeUsuarioById = async ( id = '') => {
 // }
 module.exports = {
     existenteEmail,
-    existeUsuarioById
+    existeUsuarioById,
+    existeMascotaById
     // existenteMascota
 }

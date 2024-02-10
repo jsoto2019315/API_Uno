@@ -19,6 +19,15 @@ const mascotaGet = async (req, res = response) => {
     });
 }
 
+const getMascotaById = async(req, res) =>{
+    const {id} = req.params;
+    const mascota = await Mascota.findOne({_id: id});
+
+    res.status(200).json({
+        mascota
+    });
+}
+
 const mascotasPost = async (req, res) => {
     const { nombre, edad, raza, sexo} = req.body;
     const mascota = new Mascota({ nombre, edad, raza, sexo});
@@ -32,5 +41,6 @@ const mascotasPost = async (req, res) => {
 
 module.exports = {
     mascotasPost,
-    mascotaGet
+    mascotaGet,
+    getMascotaById
 }

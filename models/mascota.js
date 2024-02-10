@@ -16,6 +16,14 @@ const mascotaSchema = Schema ({
     sexo:{
         type: String,
         required: [true, 'El sexo de la mascota es obligatorio'],
+    },
+    estado:{
+        type: Boolean,
+        default: true
+    }, 
+    google:{
+        type:Boolean,
+        default:false
     }
 });
 
