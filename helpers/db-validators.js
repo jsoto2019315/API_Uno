@@ -22,12 +22,6 @@ const existeMascotaById = async ( id = '') => {
     }
 }
 
-// const existenteMascota = async(nombre = '') => {
-//     const existenteMascota = await Mascota.findOne({nombre});
-//     if (existenteMascota) {
-//         throw new Error(`La mascota ${nombre} ya existe`);
-//     }
-// }
 module.exports = {
     existenteEmail,
     existeUsuarioById,
