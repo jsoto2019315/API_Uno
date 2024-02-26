@@ -26,5 +26,4 @@ module.exports = {
     existenteEmail,
     existeUsuarioById,
     existeMascotaById
-    // existenteMascota
 }

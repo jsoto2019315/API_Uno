@@ -41,7 +41,9 @@ const usuariosPut = async (req, res) => {
 
 const usuarioDelete = async (req, res) =>{
     const {id} = req.params;
-    const usuario = await Usuario.findByIdAndUpdate(id, {estado:false})
+    const Usuario = await Usuario.findByIdAndUpdate(id, {estado:false})
+
+    const usuario = await Usuario.findOne({_id: id})
 
     res.status(200).json({
         msg:'Usuario eliminado exitosamente'
